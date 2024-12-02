@@ -9,6 +9,7 @@ import Expenses from "./expenses/Expenses";
 import Transactions from "./transactions/Transactions";
 import Savings from "./savings/Savings";
 import Signup from "./auth/Signup";
+import About from "./about/About";
 
 const AllRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AllRoutes = () => {
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/about" element={<About />} />
 
       {/* Private Routes  */}
 

@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  console.log(user)
 
   const PublicRoutes = [
     { name: "home", path: "/" },
