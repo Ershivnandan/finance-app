@@ -150,9 +150,7 @@ const Dashboard = () => {
             <p className="text-xl">{expensiveCategory}</p>
           </div>
           </div>
-          <div className="w-full h-1/2  flex justify-center">
-            <Pie data={pieData} />
-          </div>
+         
           <div className="flex gap-4 mt-4">
             <button onClick={() => navigate("/income")} className="bg-blue-500 text-white py-2 px-4 rounded">
               Income
@@ -163,6 +161,9 @@ const Dashboard = () => {
             <button onClick={() => navigate("/savings")} className="bg-green-500 text-white py-2 px-4 rounded">
               Savings
             </button>
+          </div>
+          <div className="w-full h-1/2  flex justify-center">
+            <Pie data={pieData} />
           </div>
         </div>
       </div>
