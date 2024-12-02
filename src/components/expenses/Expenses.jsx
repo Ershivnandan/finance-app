@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ref, push, onValue, remove } from "firebase/database";
 import { database as db } from "../../utils/firebase.config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Expenses = () => {
   const [amount, setAmount] = useState("");
@@ -40,6 +41,7 @@ const Expenses = () => {
     setDescription("");
     setCategory("");
     setDate("");
+    toast.success("New expense added")
   };
 
   return (

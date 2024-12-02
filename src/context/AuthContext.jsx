@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../utils/firebase.config"; 
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
@@ -31,6 +32,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("user"); 
+    toast.error("Logged out")
   };
 
   return (

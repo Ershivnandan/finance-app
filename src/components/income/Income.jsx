@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ref, push, onValue, remove } from "firebase/database";
 import { database as db } from "../../utils/firebase.config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Income = () => {
   const [amount, setAmount] = useState("");
@@ -58,15 +59,17 @@ const Income = () => {
       setAmount("");
       setDescription("");
       setDate("");
+      toast.success("New Income added")
     } catch (error) {
       console.error("Error adding income: ", error);
+      toast.error("Eeeor adding Income!")
     }
   };
 
   const deleteTransaction = (id) => {
     const path = `incomes/${userId}/${id}`;
     remove(ref(db, path));
-   
+    toast.error("Income data removed")
     fetchTransactions(userId);
   };
 

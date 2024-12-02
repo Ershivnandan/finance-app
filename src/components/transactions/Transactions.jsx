@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ref, onValue, remove } from "firebase/database";
 import { database as db } from "../../utils/firebase.config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -46,6 +47,8 @@ const Transactions = () => {
         ? `incomes/${userId}/${id}`
         : `expenses/${userId}/${id}`;
     remove(ref(db, path));
+    toast.success(`${type === "Income" ? "Income" : "Expense"}Transaction Deleted`);
+    fetchTransactions(userId)
   };
 
   const filteredTransactions = transactions.filter((t) =>

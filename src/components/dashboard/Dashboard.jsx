@@ -117,7 +117,7 @@ const Dashboard = () => {
 
   return (
     <div className="px-10">
-      <div className="grid grid-cols-2 gap-6 mt-4">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mt-4">
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="font-bold text-xl">Financial Overview</h1>
           <div className="grid grid-cols-3 gap-5">
