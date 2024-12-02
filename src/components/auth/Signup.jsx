@@ -2,6 +2,8 @@ import { useState } from "react";
 import { auth } from "../../utils/firebase.config";
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -14,8 +16,10 @@ const Signup = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
+      toast.success("Signup successful!");
     } catch (error) {
       console.error(error.message);
+      toast.error("Signup failed! ");
     }
   };
 
@@ -23,8 +27,10 @@ const Signup = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/dashboard");
+      toast.success("Signup successful!");
     } catch (error) {
       console.error(error.message);
+      toast.error("Signup failed! ");
     }
   };
 

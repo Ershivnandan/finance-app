@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,8 +20,10 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
+      toast.success("Login successful!");
     } catch (error) {
       console.error(error.message);
+      toast.error("Login failed! Please check your credentials.");
     }
   };
 
@@ -27,8 +31,10 @@ const Login = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/dashboard");
+      toast.success("Login successful!");
     } catch (error) {
       console.error(error.message);
+      toast.error("Login failed! Please check your credentials.");
     }
   };
 
@@ -69,15 +75,28 @@ const Login = () => {
             src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo-thumbnail.png"
             alt=""
           />
-         Login with Google
+          Login with Google
         </button>
         <p className="mt-4 text-center text-sm">
-          Don’t have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link to="/signup" className="text-blue-500 hover:underline">
             Sign Up here
           </Link>
         </p>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import AllRoutes from "./components/AllRoutes";
 import Landing from "./components/landing/Landing";
 import Navbar from "./components/navbar/Navbar";
 
+
 function App() {
   const location = useLocation();
   let isLogin = false;
@@ -19,6 +20,7 @@ function App() {
     
       {isLogin ? "" : <Navbar />}
       <AllRoutes />
+      
     </>
   );
 }

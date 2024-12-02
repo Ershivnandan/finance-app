@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  console.log(user)
 
   const PublicRoutes = [
     { name: "home", path: "/" },

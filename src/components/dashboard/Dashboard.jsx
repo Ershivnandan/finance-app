@@ -69,8 +69,6 @@ const Dashboard = () => {
       setIncome(totalIncome);
     }); 
 
-    console.log(income)
-
     onValue(expensesRef, (snapshot) => {
       let totalExpenses = 0;
       const categoryCount = {};
