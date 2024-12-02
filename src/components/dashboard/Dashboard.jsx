@@ -74,7 +74,7 @@ const Dashboard = () => {
       const categoryCount = {};
       snapshot.forEach((childSnapshot) => {
         const data = childSnapshot.val();
-        totalExpenses += data.amount;
+        totalExpenses += Number(data.amount);
         categoryCount[data.category] = (categoryCount[data.category] || 0) + data.amount;
       });
       setExpenses(totalExpenses);
@@ -141,11 +141,11 @@ const Dashboard = () => {
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="font-bold text-xl">Expense Analysis</h1>
           <div className="flex gap-5">
-          <div className="bg-yellow-600 text-white p-2 rounded-lg flex">
+          <div className="bg-yellow-600 text-white p-2 rounded-lg flex items-center gap-2 capitalize">
             <p>Most Frequent Expense Category:</p>
             <p className="text-xl">{frequentCategory}</p>
           </div>
-          <div className="bg-yellow-600 text-white p-2 rounded-lg flex">
+          <div className="bg-yellow-600 text-white p-2 rounded-lg flex items-center gap-2 capitalize">
             <p>Most Expensive Category:</p>
             <p className="text-xl">{expensiveCategory}</p>
           </div>
