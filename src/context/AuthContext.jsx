@@ -8,16 +8,27 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      localStorage.setItem("accessToken", JSON.stringify(user.accessToken))
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+    if (savedUser) {
+      setUser(savedUser);
+    }
+
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        localStorage.setItem("user", JSON.stringify(currentUser));  
+      } else {
+        setUser(null);
+        localStorage.removeItem("user");  
+      }
     });
+
     return unsubscribe;
   }, []);
 
   const logout = () => {
     signOut(auth);
-    const accessToken = localStorage.removeItem("accessToken")
+    localStorage.removeItem("user"); 
   };
 
   return (

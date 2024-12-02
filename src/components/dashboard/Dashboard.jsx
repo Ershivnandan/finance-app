@@ -120,7 +120,7 @@ const Dashboard = () => {
   return (
     <div className="px-10">
       <div className="grid grid-cols-2 gap-6 mt-4">
-        <div className="flex flex-col items-center gap-5 border border-black">
+        <div className="flex flex-col items-center gap-5 ">
           <h1 className="font-bold text-xl">Financial Overview</h1>
           <div className="grid grid-cols-3 gap-5">
             <div className="bg-green-500 text-white p-5 rounded-lg flex flex-col items-center">
@@ -140,19 +140,19 @@ const Dashboard = () => {
             {expenseCategories && <Bar data={barData} /> }
           </div>
         </div>
-        <div className="flex flex-col items-center gap-5 border border-black">
+        <div className="flex flex-col items-center gap-5 ">
           <h1 className="font-bold text-xl">Expense Analysis</h1>
           <div className="flex gap-5">
-          <div className="bg-yellow-600 text-white p-2 rounded-lg">
+          <div className="bg-yellow-600 text-white p-2 rounded-lg flex">
             <p>Most Frequent Expense Category:</p>
-            <p className="text-2xl">{frequentCategory}</p>
+            <p className="text-xl">{frequentCategory}</p>
           </div>
-          <div className="bg-yellow-600 text-white p-2 rounded-lg">
+          <div className="bg-yellow-600 text-white p-2 rounded-lg flex">
             <p>Most Expensive Category:</p>
-            <p className="text-2xl">{expensiveCategory}</p>
+            <p className="text-xl">{expensiveCategory}</p>
           </div>
           </div>
-          <div className="w-full h-1/2 border border-red-500 flex justify-center">
+          <div className="w-full h-1/2  flex justify-center">
             <Pie data={pieData} />
           </div>
           <div className="flex gap-4 mt-4">
