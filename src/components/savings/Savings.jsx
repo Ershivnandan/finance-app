@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { ref, onValue } from 'firebase/database';
-import { database as db } from '../../utils/firebase.config';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect, useState } from "react";
+import { ref, onValue } from "firebase/database";
+import { database as db } from "../../utils/firebase.config";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Savings = () => {
   const [income, setIncome] = useState(0);
@@ -38,11 +38,27 @@ const Savings = () => {
   }, [income, expenses]);
 
   return (
-    <div>
-      <h2>Savings Overview</h2>
-      <p>Total Income: ${income}</p>
-      <p>Total Expenses: ${expenses}</p>
-      <p>Current Savings: ${savings}</p>
+    <div className="space-y-10 mt-10">
+      <h2 className="font-bold text-2xl text-center">Savings Overview</h2>
+
+      <div className="w-full flex justify-center items-center">
+        <div className="w-1/2">
+          <div className="grid grid-cols-3 gap-5">
+            <div className="bg-green-500 text-white p-5 rounded-lg flex flex-col items-center">
+              <p>Total Income</p>
+              <p className="text-2xl">${income}</p>
+            </div>
+            <div className="bg-red-500 text-white p-5 rounded-lg flex flex-col items-center">
+              <p>Total Expenses</p>
+              <p className="text-2xl">${expenses}</p>
+            </div>
+            <div className="bg-blue-500 text-white p-5 rounded-lg flex flex-col items-center">
+              <p>Current Savings</p>
+              <p className="text-2xl">${savings}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
