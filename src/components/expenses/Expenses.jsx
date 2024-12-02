@@ -46,7 +46,7 @@ const Expenses = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-5 px-10">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-5 px-10">
         <div className="w-full border border-black p-5">
           <h2 className="text-center text-xl font-bold">Add Expense</h2>
           <form onSubmit={addExpense} className="space-y-4 w-full py-5">
@@ -121,10 +121,10 @@ const Expenses = () => {
             </button>
           </form>
         </div>
-        <div className="border border-black text-center space-y-5">
+        <div className="border border-black text-center space-y-5 overflow-scroll">
           <h3 className="font-bold mt-2">Expense List</h3>
 
-          <table className="w-full px-5">
+          <table className="w-full px-5 overflow-scroll">
             <thead className="border border-black">
               <tr className="flex justify-between">
                 <td className="border-r border-black w-full text-center">Amount</td>

@@ -41,8 +41,8 @@ const Savings = () => {
     <div className="space-y-10 mt-10">
       <h2 className="font-bold text-2xl text-center">Savings Overview</h2>
 
-      <div className="w-full flex justify-center items-center">
-        <div className="w-1/2">
+      <div className="w-full flex justify-center items-center md:px-5 px-2">
+        <div className="md:w-1/2 w-full">
           <div className="grid grid-cols-3 gap-5">
             <div className="bg-green-500 text-white p-5 rounded-lg flex flex-col items-center">
               <p>Total Income</p>

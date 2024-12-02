@@ -56,7 +56,7 @@ const Transactions = () => {
   );
 
   return (
-    <div className="px-10">
+    <div className="md:px-10 px-2">
       <nav className="flex justify-between px-10 items-center py-2 border border-black">
         <div className="w-full flex justify-center">
           <h2>Transactions</h2>
@@ -73,8 +73,8 @@ const Transactions = () => {
         </div>
       </nav>
 
-      <div className="overflow-x-scroll w-full">
-        <table className="w-full px-5">
+      <div className="overflow-scroll w-full"> 
+        <table className="w-full md:px-5">
           <thead className="border border-black">
             <tr className="flex justify-between">
               <td className="border-r border-black w-full text-center">

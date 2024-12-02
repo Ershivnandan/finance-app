@@ -116,11 +116,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="px-10">
+    <div className="px-10 mb-10">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mt-4">
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="font-bold text-xl">Financial Overview</h1>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 grid-cols-2 gap-5">
             <div className="bg-green-500 text-white p-5 rounded-lg flex flex-col items-center">
               <p>Total Income</p>
               <p className="text-2xl">${income}</p>
