@@ -137,7 +137,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="w-full">
-            <Bar data={barData} />
+            {expenseCategories && <Bar data={barData} /> }
           </div>
         </div>
         <div className="flex flex-col items-center gap-5 border border-black">
