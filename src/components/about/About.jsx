@@ -23,8 +23,7 @@ const About = () => {
                 Who We Are
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                FinanceApp is your all-in-one personal finance tool that helps
-                you manage your income, expenses, savings, and investments.
+                FinanceApp is tool that helps you manage your income, expenses, savings, and investments.
               </p>
             </div>
             <div>
@@ -32,9 +31,7 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                By providing tools for efficient budgeting, smart investing, and
-                insightful financial analytics, we strive to bring financial
-                freedom and peace of mind to our users.
+                Finance App
               </p>
             </div>
           </div>
