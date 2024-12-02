@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../utils/firebase.config"; 
 import { onAuthStateChanged, signOut } from "firebase/auth";
